@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美食介绍</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    overflow: hidden;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2%;
+    width: 96%; /* 控制容器宽度，使其尽量铺满画面 */
+    height: 96%;
+    padding: 2%;
+  }
+
+  .card {
+    background-color: #f0f0f0;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+  }
+
+  .card-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    transform: scale(0);
+  }
+
+  .card:hover .card-info,
+  .card:active .card-info {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .card:hover img,
+  .card:active img {
+    opacity: 0;
+  }
+
+  .card-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  h3 {
+      text-align: center; /* 设置文本居中 */
+      font-size: 30px; /* 可以根据需要调整字体大小 */
+      margin: 20px 0;/* 为标题添加上下边距 */
+	  color:yellow;
+    }
+	p {
+	    font-size: 16px; /* 设置正文字体大小 */
+	    text-align: justify; /* 设置正文两端对齐 */
+	    line-height: 1.6; /* 设置行高，增加阅读体验 */
+	  }
+</style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="card" onclick="this.classList.toggle('active');">
+    <img src="fish.jpg" alt="西湖醋鱼">
+    <div class="card-info">
+      <h3>西湖醋鱼</h3>
+      <p>西湖醋鱼源于南宋京都临安（今杭州）。宋五嫂为南宋著名民间女厨师，高宗赵构乘龙舟西湖，曾尝其鱼羹，赞美不已，于是名声大振，
+	  奉为脍鱼之“师祖”。从此，宋嫂鱼羹扬名世界；其后又经名手整治，乃成西湖醋鱼与宋嫂鱼羹两种名菜，流传至今。
+	  </p>
+    </div>
+  </div>
+
+  <div class="card" onclick="this.classList.toggle('active');">
+    <img src="pie.jpg" alt="葱包桧">
+    <div class="card-info">
+      <h3>葱包桧</h3>
+	  <p>葱包烩儿是早点食品。制作方法就是将油条和小葱裹在面饼内，加上一块卤水素烧鹅 ，在铁锅上压烤或油炸至春饼脆黄，配上甜面酱和辣酱。
+葱包烩儿与南宋奸臣秦桧有关，岳飞被杀害于杭州风波亭，百姓与爱国军将士莫不痛心疾首。杭州有位点心师傅，他用面粉搓捏成两个象征秦桧夫妻的面人，
+把它们扭在一起，丢进油锅中压烤，以解心中之恨，并称其为“油炸烩儿”。一时，市民争相购买，恨不得一口吞下“油炸烩儿”。这一方式很快被各地仿效。
+为了避免秦桧起疑，把木字旁的桧改成火字旁的烩。“葱包烩儿”也是同样的寓意。
+	  </p>
+    </div>
+  </div>
+
+  <div class="card" onclick="this.classList.toggle('active');">
+    <img src="shrimp.jpg" alt="龙井虾仁">
+    <div class="card-info">
+      <h3>龙井虾仁</h3>
+	  <p>
+		  龙井虾仁将茶饮与虾仁融合，整体清新软嫩，虾仁玉白，鲜嫩，芽叶清香，色泽雅丽，虾中有茶香，茶中有虾鲜，食后清口开胃，回味无穷。
+		  相传，乾隆皇帝微服私访，在杭州茶农家喝到一杯龙井新茶，深感清香可口，趁人不备，暗抓了些茶叶离去，后来在市内餐馆用膳，叫店伙计用此泡茶。
+		  店伙计看到乾隆内着的龙袍外露一角，急忙告诉店主。店主正值烹调虾仁，惊慌中竟把店伙计手中的茶叶当作葱末撒到锅内。 
+		  想不到这道茶叶虾仁色泽雅丽， 滋味独特，吃得乾隆点头称好。此后，这道菜肴便成了杭州名菜而流传至今
+	  </p>
+    </div>
+  </div>
+
+  <div class="card" onclick="this.classList.toggle('active');">
+    <img src="cake.jpg" alt="定胜糕">
+    <div class="card-info">
+      <h3>定胜糕</h3>
+	  <p>
+		  定胜糕是江浙地区的一种传统名点，属于江浙糕点；其色泽淡红，松软香糯，带甜甜的豆沙味。传说是
+		  南宋时湖州百姓为韩世忠的韩家军出征鼓舞将士而特制的，糕上有“定胜”两字，后就被称“定胜糕”。
+		  定胜糕始于宋代，千百年来一直为杭州人民所喜爱。据《梦粱录》记载，当时定胜糕是百姓为鼓舞士气做的糕点，
+		  杨家将吃后士气大增，百战百胜。宋室南迁后，定胜糕也随着传到杭州，每次岳家军出征，百姓沿途都会送上，战无不克。
+	  </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
